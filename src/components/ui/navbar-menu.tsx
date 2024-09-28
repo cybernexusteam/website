@@ -41,11 +41,15 @@ export const MenuItem = ({
           {active === item && (
             <div className="absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-4">
               <motion.div
+                
                 transition={transition}
                 layoutId="active" // layoutId ensures smooth animation
                 className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
               >
                 <motion.div
+                  initial={{opacity: 0, y:10}}
+                  animate={{opacity: 1, y: 0}}
+                  transition={{delay:0.2, type:"spring" }}
                   layout // layout ensures smooth animation
                   className="w-max h-full p-4"
                 >
@@ -97,11 +101,11 @@ export const ProductItem = ({
         alt={title}
         className="flex-shrink-0 rounded-md shadow-2xl"
       />
-      <div>
+      <div className="px-5">
         <h4 className="text-xl font-bold mb-1 text-black dark:text-white">
           {title}
         </h4>
-        <p className="text-neutral-700 text-sm max-w-[10rem] dark:text-neutral-300">
+        <p className="text-neutral-700 text-sm max-w-[15rem] dark:text-neutral-300">
           {description}
         </p>
       </div>

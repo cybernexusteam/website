@@ -38,6 +38,15 @@ const config = {
         sans: ["Lexend Exa", "sans-serif"],
         mono: ["Geist Mono", "monospace"],
       },
+      spacing: {
+        'calc-100vh-600px': 'calc(100vh + 600px)',
+      },
+      fontSize: {
+        '46px': '46px',
+      },
+      zIndex: {
+        '3': '3',
+      },
     },
   },
   plugins: [tailwindcssAnimate],
