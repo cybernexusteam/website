@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import { motion } from 'framer-motion';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {motion } from 'framer-motion'
+import { useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,6 +12,15 @@ const MovingText = () => {
   
     const thirdText = useRef(null);
     const slider = useRef(null);
+    const ScrollCue = () => {
+      return (
+        <div className="fixed bottom-8 right-8 animate-bounce">
+          <div className="w-6 h-11 border-2 border-white rounded-full flex justify-center p-1">
+            <div className="w-1 h-3 bg-white rounded-full animate-scrollDown" />
+          </div>
+        </div>
+      );
+    };
 
   useEffect(() => {
     let xPercent = 0;
@@ -58,19 +67,19 @@ const MovingText = () => {
           <div className="flex">
             <p
               ref={firstText}
-              className="relative m-0 text-white text-[230px] font-medium pr-[50px]"
+              className="relative m-0 text-white text-[230px] font-medium pr-[45px]"
             >
               CYBERNEXUS
             </p>
             <p
               ref={secondText}
-              className="relative m-0 text-white text-[230px] font-medium pr-[50px]"
+              className="relative m-0 text-white text-[230px] font-medium pr-[45px]"
             >
               CYBERNEXUS
             </p>
             <p
               ref={thirdText}
-              className="relative m-0 text-white text-[230px] font-medium pr-[50px]"
+              className="relative m-0 text-white text-[230px] font-medium pr-[45px]"
             >
               CYBERNEXUS
             </p>
