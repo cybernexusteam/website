@@ -1,18 +1,22 @@
 "use client";
 
+import Header from "@/src/components/header";
+import StickyCursor from "@/src/components/stickyCursor";
 import { BackgroundGradient } from "@/src/components/ui/background-gradient";
 import { FlipWords } from "@/src/components/ui/flip-words";
 import Hero from "@/src/components/ui/Hero";
 import { LayoutGrid } from "@/src/components/ui/layout-grid";
-import { LeNavbar } from "@/src/components/ui/Nav";
 import { AnimatePresence, motion } from "framer-motion";
+import { useRef } from 'react';
+
+
 
 const SkeletonOne = () => (
   <div>
     <p className="font-bold md:text-4xl text-xl text-white">What is Cybersecurity?</p>
     <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
     Cybersecurity is the practice of protecting systems, networks, and data from digital attacks. 
-    It’s all about keeping information safe!
+    It's all about keeping information safe!
     </p>
   </div>
 );
@@ -30,7 +34,7 @@ const SkeletonThree = () => (
   <div>
     <p className="font-bold md:text-4xl text-xl text-white">Types of Cybersecurity</p>
     <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-    Cybersecurity isn’t just about firewalls. 
+    Cybersecurity isn't just about firewalls. 
     It includes network security, encryption, ethical hacking, and more!
     </p>
   </div>
@@ -45,7 +49,6 @@ const SkeletonFour = () => (
   </div>
 );
 
-// Card data
 const cards = [
   {
     id: 1,
@@ -79,6 +82,7 @@ const cards = [
 
 export default function Home() {
   const words = ["Cybersecurity", "Ethical Hacking", "Networking", "Programming", "Linux"];
+  const titleRef = useRef<HTMLHeadingElement>(null);
 
   const ScrollCue = () => (
     <div className="fixed bottom-8 right-8 animate-bounce">
@@ -88,29 +92,35 @@ export default function Home() {
     </div>
   );
 
+    const stickyElement = useRef(null);
+
   return (
     <AnimatePresence mode="wait">
       <motion.div className="flex flex-col items-center justify-center overflow-hidden">
-        {/* Navbar */}
-        <LeNavbar />
-        {/* Hero Section */}
         <Hero />
-        {/* Scroll Cue */}
-        <ScrollCue />
-        {/* Welcome Section */}
+        <Header ref={stickyElement} />
+        <StickyCursor stickyElement={stickyElement} />
+
+        <ScrollCue/>
         <div className="w-full h-[100vh] p-20 bg-black relative">
-          <h1 className="text-9xl font-bold text-white text-center ">Welcome to CyberNexus</h1>
-          <div className="text-3xl text-white text-center mt-3 mb-4">
+          <h1 
+            ref={titleRef}
+            className="text-8xl font-bold text-white text-center cursor-none"
+          >
+            Welcome to CyberNexus
+          </h1>
+          <div className="text-2xl text-white text-center mt-3 mb-4">
             A place where you can learn and grow in the world of{" "}
             <span className="text-[#00ccb1]">
               <FlipWords words={words} duration={2500} className="inline-block" />
             </span>
           </div>
-        <BackgroundGradient
-  animate={true}
-  className="absolute inset-x-0 top-[500px] !z-[1] opacity-30 blur-3xl bg-[radial-gradient(circle_farthest-side_at_0_100%,#00ccb1,transparent),radial-gradient(circle_farthest-side_at_100%_0,#7b61ff,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ffc414,transparent),radial-gradient(circle_farthest-side_at_0_0,#1ca0fb,#141316)]"
-/>
-        <LayoutGrid cards={cards} />
+
+          <BackgroundGradient
+            animate={true}
+            className="absolute inset-x-0 top-[500px] !z-[1] opacity-30 blur-3xl bg-[radial-gradient(circle_farthest-side_at_0_100%,#00ccb1,transparent),radial-gradient(circle_farthest-side_at_100%_0,#7b61ff,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ffc414,transparent),radial-gradient(circle_farthest-side_at_0_0,#1ca0fb,#141316)]"
+          />
+          <LayoutGrid cards={cards} ref={stickyElement} />
         </div>
 
         <div className="w-full py-80 bg-black">
@@ -120,8 +130,8 @@ export default function Home() {
               CyberNexus is a community of cybersecurity enthusiasts who are passionate about learning and growing together. 
               Join us today and take the first step towards becoming a leader in the field of cybersecurity!
             </p>
-        </div>
       </div>
+        </div>
       </motion.div>
     </AnimatePresence>
   );

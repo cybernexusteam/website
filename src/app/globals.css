@@ -15,3 +15,14 @@
     font-family: 'Garet', sans-serif;
   }
   
+
+/* Add this to your globals.css */
+.cursor-none {
+    cursor: none;
+  }
+  
+  /* Optional: Hide cursor on the entire page */
+  body.using-sticky-cursor {
+    cursor: none;
+  }
+  
