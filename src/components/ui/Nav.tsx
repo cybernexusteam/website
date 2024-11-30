@@ -1,5 +1,5 @@
 "use client";
-import Cyberpat from "@/images/Cyberpatriot.png";
+import Cyberpat from "@/public/images/Cyberpatriot.png";
 import Link from "next/link";
 import { useState } from "react";
 import { cn } from "../../lib/utils"; // Adjusted import path
@@ -38,7 +38,7 @@ function Navbar({ className }: { className?: string }) {
             <ProductItem
               title="CyberPatriot"
               description="A national cybersecurity competition for high schoolers across the United States"
-              href="/cyberpatriot"
+              href="/public/images/Cyberpatriot.png"
               src={Cyberpat}
             />
           </div>

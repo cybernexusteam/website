@@ -1,3 +1,4 @@
+import '@/src/app/globals.css';
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { HeroParallax } from "./hero-parallax";

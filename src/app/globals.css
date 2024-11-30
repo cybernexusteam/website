@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@font-face {
+    font-family: 'Garet';
+    src: url('/public/fonts/garet/Garet-Heavy.woff2') format('woff2'),
+         url('/public/fonts/garet/Garet-Heavy.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  body {
+    font-family: 'Garet', sans-serif;
+  }
+  

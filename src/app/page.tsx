@@ -7,7 +7,6 @@ import { LayoutGrid } from "@/src/components/ui/layout-grid";
 import { LeNavbar } from "@/src/components/ui/Nav";
 import { AnimatePresence, motion } from "framer-motion";
 
-// Define Skeleton components for card content
 const SkeletonOne = () => (
   <div>
     <p className="font-bold md:text-4xl text-xl text-white">What is Cybersecurity?</p>
@@ -100,23 +99,21 @@ export default function Home() {
         <ScrollCue />
         {/* Welcome Section */}
         <div className="w-full h-[100vh] p-20 bg-black relative">
-          <h1 className="text-8xl font-bold text-white text-center">Welcome to CyberNexus</h1>
-          <div className="text-3xl text-white text-center mt-3">
+          <h1 className="text-9xl font-bold text-white text-center ">Welcome to CyberNexus</h1>
+          <div className="text-3xl text-white text-center mt-3 mb-4">
             A place where you can learn and grow in the world of{" "}
             <span className="text-[#00ccb1]">
               <FlipWords words={words} duration={2500} className="inline-block" />
             </span>
           </div>
-
         <BackgroundGradient
   animate={true}
   className="absolute inset-x-0 top-[500px] !z-[1] opacity-30 blur-3xl bg-[radial-gradient(circle_farthest-side_at_0_100%,#00ccb1,transparent),radial-gradient(circle_farthest-side_at_100%_0,#7b61ff,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ffc414,transparent),radial-gradient(circle_farthest-side_at_0_0,#1ca0fb,#141316)]"
 />
-
         <LayoutGrid cards={cards} />
         </div>
 
-        <div className="w-full py-40 bg-black">
+        <div className="w-full py-80 bg-black">
           <div className="flex flex-col items-center justify-center">
             <h1 className="text-6xl font-bold text-white">Join Us Today!</h1>
             <p className="text-xl text-white mt-4 max-w-lg text-center">
