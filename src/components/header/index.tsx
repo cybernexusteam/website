@@ -2,7 +2,7 @@ import styles from '@/src/components/header/styles.module.scss';
 import Magnetic from '@/src/components/magnetic';
 import { forwardRef, useRef } from 'react';
 
-const Header = forwardRef<HTMLDivElement, {}>(function Header(props, ref) {
+const Burger = forwardRef<HTMLDivElement, {}>(function Header(props, ref) {
   const burgerRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -10,13 +10,12 @@ const Header = forwardRef<HTMLDivElement, {}>(function Header(props, ref) {
       <Magnetic>
         <div className={styles.burger}>
           <div ref={burgerRef} className={styles.bounds}></div>
-          <span></span>
         </div>
       </Magnetic>
     </div>
   );
 });
 
-Header.displayName = 'Header';
+Burger.displayName = 'Burger';
 
-export default Header;
+export default Burger;

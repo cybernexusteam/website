@@ -1,7 +1,5 @@
 "use client";
 
-import Header from "@/src/components/header";
-import StickyCursor from "@/src/components/stickyCursor";
 import { BackgroundGradient } from "@/src/components/ui/background-gradient";
 import { FlipWords } from "@/src/components/ui/flip-words";
 import Hero from "@/src/components/ui/Hero";
@@ -92,18 +90,12 @@ export default function Home() {
     </div>
   );
 
-    const stickyElement = useRef(null);
 
   return (
     <AnimatePresence mode="wait">
       <motion.div className="flex flex-col items-center justify-center overflow-hidden">
       
         <Hero/>
-
-        <Header 
-        ref={stickyElement} 
-        />
-        <StickyCursor stickyElement={stickyElement} />
 
         <div className="w-full h-[100vh] p-20 bg-black relative">
           <h1 

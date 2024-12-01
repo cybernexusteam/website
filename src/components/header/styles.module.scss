@@ -20,7 +20,7 @@
         pointer-events: none;
         
     
-        &::before, &::after, span {
+        &::before, &::after {
             display: block;
             content: "";
             width: 30px;
@@ -28,14 +28,6 @@
             background-color: white;
             transition: all 0.3s ease;
         }
-
-        span {
-            display: block;
-            content: "";
-            width: 30px;
-            height: 2px;
-            background-color: white;
-            transition: all 0.3s ease;
         }
     }
     
@@ -55,4 +47,3 @@
             }
         }
     }
-}
