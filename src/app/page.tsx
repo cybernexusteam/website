@@ -85,8 +85,8 @@ export default function Home() {
   const titleRef = useRef<HTMLHeadingElement>(null);
 
   const ScrollCue = () => (
-    <div className="fixed bottom-8 right-8 animate-bounce">
-      <div className="w-6 h-11 border-2 border-white rounded-full flex justify-center p-1">
+    <div className="bottom-8 animate-bounce">
+      <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center p-1">
         <div className="w-1 h-3 bg-white rounded-full animate-scrollDown" />
       </div>
     </div>
@@ -97,11 +97,14 @@ export default function Home() {
   return (
     <AnimatePresence mode="wait">
       <motion.div className="flex flex-col items-center justify-center overflow-hidden">
-        <Hero />
-        <Header ref={stickyElement} />
+      
+        <Hero/>
+
+        <Header 
+        ref={stickyElement} 
+        />
         <StickyCursor stickyElement={stickyElement} />
 
-        <ScrollCue/>
         <div className="w-full h-[100vh] p-20 bg-black relative">
           <h1 
             ref={titleRef}
@@ -109,7 +112,7 @@ export default function Home() {
           >
             Welcome to CyberNexus
           </h1>
-          <div className="text-2xl text-white text-center mt-3 mb-4">
+          <div className="text-2xl text-white text-center mt-3 mb-3">
             A place where you can learn and grow in the world of{" "}
             <span className="text-[#00ccb1]">
               <FlipWords words={words} duration={2500} className="inline-block" />
