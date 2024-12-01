@@ -10,6 +10,7 @@ const Header = forwardRef<HTMLDivElement, {}>(function Header(props, ref) {
       <Magnetic>
         <div className={styles.burger}>
           <div ref={burgerRef} className={styles.bounds}></div>
+          <span></span>
         </div>
       </Magnetic>
     </div>

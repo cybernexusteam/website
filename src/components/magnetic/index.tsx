@@ -18,7 +18,7 @@ export default function Framer({ children }: FramerProps) {
     const { height, width, left, top } = ref.current!.getBoundingClientRect()
     const middleX = clientX - (left + width / 2)
     const middleY = clientY - (top + height / 2)
-    setPosition({ x: middleX * 0.1, y: middleY * 0.1 })
+    setPosition({ x: middleX * 0.3, y: middleY * 0.3 })
   }
 
     const reset = () => {
@@ -32,7 +32,7 @@ export default function Framer({ children }: FramerProps) {
             onMouseMove={handleMouse}
             onMouseLeave={reset}
       animate={position}
-      transition={{ type: 'spring', stiffness: 350, damping: 5, mass: 0.5 }}
+      transition={{ type: 'spring', stiffness: 500, damping: 1, mass: 0.5 }}
         >
             {children}
         </motion.div>

@@ -40,7 +40,7 @@ export const BackgroundGradient = ({
           backgroundSize: animate ? "400% 400%" : undefined,
         }}
         className={cn(
-          "absolute inset-0 rounded-xl z-[1] opacity-100 group-hover:opacity-100 blur-xl transition duration-500 will-change-transform",
+          "absolute inset-0 rounded-xl z-[1] opacity-100 group-hover:opacity-100 blur-2xl transition duration-500 will-change-transform",
           "bg-[radial-gradient(circle_farthest-side_at_0_100%,rgba(255,255,255,0.4),transparent),radial-gradient(circle_farthest-side_at_100%_0,rgba(255,255,255,0.4),transparent),radial-gradient(circle_farthest-side_at_100%_100%,rgba(255,255,255,0.4),transparent),radial-gradient(circle_farthest-side_at_0_0,rgba(255,255,255,0.4),transparent)]"
         )}
       />
@@ -58,7 +58,7 @@ export const BackgroundGradient = ({
             : undefined
         }
         style={{
-          backgroundSize: animate ? "400% 400%" : undefined,
+          backgroundSize: animate ? "500% 500%" : undefined,
         }}
         className={cn(
           "absolute inset-0 rounded-3xl z-[1] will-change-transform",

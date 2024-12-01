@@ -9,7 +9,7 @@
     cursor: pointer;
     mix-blend-mode: difference;
     z-index: 999; // ensure it's above other elements
-    width: auto; // allow natural width
+    width: auto;
     
     .burger {
         position: relative;

@@ -120,7 +120,7 @@ export default function Home() {
             animate={true}
             className="absolute inset-x-0 top-[500px] !z-[1] opacity-30 blur-3xl bg-[radial-gradient(circle_farthest-side_at_0_100%,#00ccb1,transparent),radial-gradient(circle_farthest-side_at_100%_0,#7b61ff,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ffc414,transparent),radial-gradient(circle_farthest-side_at_0_0,#1ca0fb,#141316)]"
           />
-          <LayoutGrid cards={cards} ref={stickyElement} />
+          <LayoutGrid cards={cards} />
         </div>
 
         <div className="w-full py-80 bg-black">
